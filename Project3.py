@@ -248,6 +248,8 @@ def prim( nodes, edges ):
     return mst
 
 
+
+
 # For question 1 we are to execute the DFS and BFS algorithms on the given graph
 def question1():
     print("--------------------------------------------------------------------------")
@@ -288,6 +290,7 @@ def question1():
     print("--------------------------------------------------------------------------")
     print("\n")
     
+    
 
 def question2():
     print("--------------------------------------------------------------------------")
@@ -325,10 +328,11 @@ def question2():
     print("--------------------------------------------------------------------------")
     print("\n")
     
+    
  
 def question3():
     print("--------------------------------------------------------------------------")
-    print("Question 3: Find all the strongly connected components in the given graph.")
+    print("Question 3: Find all the strongly connected components in the graph provided.")
     
     dgraph = Graph() 
 
@@ -354,9 +358,10 @@ def question3():
     print("\n")
 
 
+
 def question4():
     print("--------------------------------------------------------------------------")
-    print("Question 4: Apply Dijkstra's algorithm to the given graph.")
+    print("Question 4: Apply Dijkstra's algorithm to the graph provided.")
     
     graph = Graph()
     graph.nodes = {'A' ,'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'}
@@ -373,6 +378,8 @@ def question4():
 
     print("--------------------------------------------------------------------------")
     print("\n")
+
+
 
 def question5():
     print("--------------------------------------------------------------------------")
