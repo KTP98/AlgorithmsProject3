@@ -6,9 +6,7 @@ from collections import defaultdict, deque
 sys.setrecursionlimit(10 ** 6)
 
 
-
-
-# Graph ADT used in the project
+# Graph ADT 
 
 class Graph:
     def __init__(self):
@@ -98,10 +96,10 @@ def dfs_paths(graph, start, goal):
 
 
 class Tracker(object):
-    """Keeps track of the current time, current source, component leader,
-    finish time of each node and the explored nodes.
+    #Keeps track of the current time, current source, component leader,
+    #finish time of each node and the explored nodes.
     
-    'self.leader' is informs of {node: leader, ...}."""
+    #'self.leader' is informs of {node: leader, ...}.
 
     def __init__(self):
         self.current_time = 0
@@ -112,9 +110,9 @@ class Tracker(object):
 
 
 def dfst(graph_dict, node, tracker):
-    """Inner loop explores all nodes in a SCC. Graph represented as a dict,
-    {tail: [head_list], ...}. Depth first search runs recursively and keeps
-    track of the parameters"""
+    #Inner loop explores all nodes in a SCC. Graph represented as a dict,
+    #{tail: [head_list], ...}. Depth first search runs recursively and keeps
+    #track of the parameters
 
     tracker.explored.add(node)
     tracker.leader[node] = tracker.current_source
@@ -126,8 +124,8 @@ def dfst(graph_dict, node, tracker):
 
 
 def dfs_loop(graph_dict, nodes, tracker):
-    """Outer loop checks out all SCCs. Current source node changes when one
-    SCC inner loop finishes."""
+    #Outer loop checks out all SCCs. Current source node changes when one
+    #SCC inner loop finishes.
 
     for node in nodes:
         if node not in tracker.explored:
@@ -136,8 +134,7 @@ def dfs_loop(graph_dict, nodes, tracker):
 
 
 def graph_reverse(graph):
-    """Given a directed graph in forms of {tail:[head_list], ...}, compute
-    a reversed directed graph, in which every edge changes direction."""
+    #A reversed directed graph, in which every edge changes direction.
 
     reversed_graph = defaultdict(list)
     for tail, head_list in graph.items():
@@ -147,9 +144,9 @@ def graph_reverse(graph):
 
 
 def scc(graph):
-    """First runs dfs_loop on reversed graph with nodes in decreasing order,
-    then runs dfs_loop on original graph with nodes in decreasing finish
-    time order(obtained from first run). Return a dict of {leader: SCC}."""
+    #First runs dfs_loop on reversed graph with nodes in decreasing order,
+    #then runs dfs_loop on original graph with nodes in decreasing finish
+    #time order. Return a dict of {leader: SCC}.
 
     out = defaultdict(list)
     tracker1 = Tracker()
@@ -306,7 +303,7 @@ def question2():
     print("--------------------------------------------------------------------------")
     print("Question 2: Find all of the paths between two nodes using DFS and BFS")
     
-    # DFS graph, disconnected 
+    # DFS graph (disconnected)
     graph = Graph()
 
     graph.nodes = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'N', 'O', 'P'}
