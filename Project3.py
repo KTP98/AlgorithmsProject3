@@ -274,12 +274,22 @@ def question1():
     print("\n")
     path = []
     t = 0
+    v = dfs(graph, 'J')
+    print("DFS output starting with J:")
+    print("Path: ", path)
+    print("\n")
+    path = []
+    t = 0
     v = dfs(graph, 'H')
     print("DFS output starting with H:")
     print("Path: ", path)     
     print("\n")
     v = bfs(graph, 'A')
     print("BFS output starting with A:")
+    print("Path: ", v)
+    print("\n")
+    v = bfs(graph, 'J')
+    print("BFS output starting with J:")
     print("Path: ", v)
     print("\n")
     v = bfs(graph, 'H')
